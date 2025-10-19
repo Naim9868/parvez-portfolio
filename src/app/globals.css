@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
+} */
+/* 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -17,10 +17,106 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #111111;
+  color: #a9a9a9;
+  overflow-x: hidden;
 }
+
+
+
+.gradient-bg {
+  background-image: linear-gradient(135deg, rgba(34, 34, 34, 1) 0%, rgba(17, 17, 17, 1) 50%, rgba(45, 20, 69, 0.5) 100%);
+}
+
+.hero-gradient-bg {
+  background: radial-gradient(circle at top right, rgba(128, 0, 128, 0.2), transparent 40%), radial-gradient(circle at bottom left, rgba(128, 0, 128, 0.1), transparent 50%), #111;
+}
+
+.btn-primary {
+  background-color: #8338ec;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #7229d6;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(131, 56, 236, 0.2);
+}
+.nav-link.active {
+  background-color: #8338ec;
+  color: white;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Scroll Animation Styles */
+.scroll-animate, .scroll-animate-left {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-animate-left {
+  transform: translateX(-40px);
+}
+.scroll-animate.visible, .scroll-animate-left.visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* Company Scroller Animation */
+.scroller {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+.scroller-inner {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+@keyframes scroll {
+  to { transform: translateX(calc(-50% - 1rem)); }
+}
+.scroller-inner img {
+  height: 40px;
+  max-width: 150px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.scroller-inner img:hover {
+  opacity: 1;
+}
+
+/* Aspect ratio for videos */
+.aspect-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+.aspect-video iframe {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* Social icons */
+.social-icon-list a { display: inline-block; transition: transform 0.2s ease-in-out; }
+.social-icon-list a:hover { transform: scale(1.15); }
+.icon-youtube { color: #FF0000; }
+.icon-linkedin { color: #0A66C2; }
+.icon-github { color: #FFFFFF; }
+.icon-facebook { color: #1877F2; }
+.icon-twitter { color: #FFFFFF; }
+.icon-leetcode { filter: invert(1) opacity(0.85); transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out; }
+.social-icon-list a:hover .icon-leetcode { filter: invert(1) opacity(1);}
