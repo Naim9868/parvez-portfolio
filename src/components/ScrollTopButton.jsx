@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { FaArrowUp} from 'react-icons/fa';
 
 const ScrollTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +31,8 @@ const ScrollTopButton = () => {
         isVisible ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
     >
-      <i className="fas fa-arrow-up"></i>
+      <FaArrowUp className="text-xl" />
+       
     </button>
   );
 };

@@ -1,10 +1,12 @@
 import "./globals.css";
 import Head from "next/head";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "Pervez Hasan - AI Engineer, Author, YouTuber",
   description: "Portfolio of Pervez Hasan",
 };
+
 
 export default function RootLayout({ children }) {
   return (
@@ -17,12 +19,13 @@ export default function RootLayout({ children }) {
         />
 
         {/* Font Awesome */}
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
       </Head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Header />
+        {children}
+        
+        </body>
     </html>
   );
 }

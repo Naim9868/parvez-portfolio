@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaYoutube, FaLinkedinIn, FaGithub, FaFacebookF, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -17,68 +18,79 @@ const Contact = () => {
           {/* Left: Contact info */}
           <div className="lg:w-1/3 scroll-animate">
             <div className="flex items-start space-x-4 mb-8">
-              <i className="fas fa-map-marker-alt text-purple-400 text-2xl mt-1"></i>
+              <FaMapMarkerAlt className="text-purple-400 text-2xl mt-1" />
               <div>
                 <h4 className="text-white font-bold">Address:</h4>
-                <p>Gazipur, Dhaka, Bangladesh</p>
+                <p className="text-gray-300">Gazipur, Dhaka, Bangladesh</p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4 mb-8">
-              <i className="fas fa-envelope text-purple-400 text-2xl mt-1"></i>
+              <FaEnvelope className="text-purple-400 text-2xl mt-1" />
               <div>
                 <h4 className="text-white font-bold">My Email:</h4>
-                <p>contact@pervezhasan.com</p>
+                <p className="text-gray-300">contact@pervezhasan.com</p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4">
-              <i className="fas fa-phone text-purple-400 text-2xl mt-1"></i>
+              <FaPhone className="text-purple-400 text-2xl mt-1" />
               <div>
                 <h4 className="text-white font-bold">Call Me Now:</h4>
-                <p>+880 1304622164</p>
+                <p className="text-gray-300">+880 1304622164</p>
               </div>
             </div>
 
             {/* Social icons */}
-            <div className="mt-8 flex items-start items-center space-x-6 social-icon-list">
+            <div className="mt-8 flex justify-center lg:justify-start items-center space-x-6 scroll-animate delay-400">
               <a
                 href="https://www.youtube.com/@thinkwithpervez"
                 target="_blank"
-                className="text-2xl"
+                rel="noopener noreferrer"
+                className="text-2xl text-red-500 hover:text-red-700 transition-colors duration-300"
               >
-                <i className="fab fa-youtube icon-youtube"></i>
+                <FaYoutube />
               </a>
               <a
                 href="https://www.linkedin.com/in/thinkwithpervez/"
                 target="_blank"
-                className="text-2xl"
+                rel="noopener noreferrer"
+                className="text-2xl text-blue-400 hover:text-blue-500 transition-colors duration-300"
               >
-                <i className="fab fa-linkedin-in icon-linkedin"></i>
+                <FaLinkedinIn />
               </a>
               <a
                 href="https://github.com/pervez72"
                 target="_blank"
-                className="text-2xl"
+                rel="noopener noreferrer"
+                className="text-2xl text-gray-200 hover:text-white transition-colors duration-300"
               >
-                <i className="fab fa-github icon-github"></i>
+                <FaGithub />
               </a>
               <a
                 href="https://leetcode.com/u/pervez25/"
                 target="_blank"
+                rel="noopener noreferrer"
                 title="My LeetCode Profile"
+                className="text-gray-400 hover:opacity-80 transition-opacity duration-300"
               >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
                   alt="LeetCode"
-                  className="w-7 h-7 icon-leetcode"
+                  className="w-7 h-7 filter invert"
                 />
               </a>
-              <a href="#" className="text-2xl">
-                <i className="fab fa-facebook-f icon-facebook"></i>
+              <a 
+                href="#" 
+                className="text-2xl text-blue-400 hover:text-blue-500 transition-colors duration-300"
+              >
+                <FaFacebookF />
               </a>
-              <a href="#" className="text-2xl">
-                <i className="fab fa-x-twitter icon-twitter"></i>
+              <a 
+                href="#" 
+                className="text-2xl text-gray-300 hover:text-blue-400 transition-colors duration-300"
+              >
+                <FaTwitter />
               </a>
             </div>
           </div>
